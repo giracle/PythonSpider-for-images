@@ -9,6 +9,10 @@ class Spider:
         self.headers = headers
 
     def pause(self):
+        '''
+        TODO: 用于模拟人工操作，添加时间间隔，避免给网站造成压力
+              随机暂停1-3s
+        '''
         # pass
         time.sleep(random.randint(1,3))
 
@@ -120,7 +124,7 @@ if __name__ == "__main__":
         each_type_url = url+item[0]
         print("each_type_url:",each_type_url) # each_type_url: https://www.umei.cc/meinvtupian/xingganmeinv/
         kind_name = item[1]
-        print(kind_name) # 性感美女
+        print(kind_name) 
         spider.createDir(kind_name)
 
         # 获得当前type的总页数 
@@ -143,7 +147,7 @@ if __name__ == "__main__":
                 kind_items = spider.parserHtml(pattern_each_type_url, html3)
                 if not kind_items:
                         continue
-            # print(kind_items) # [('xingganmeinv/315676.htm', '秀人网美女模特周慕汐fairy白衬衫黑丝美腿苗条身姿性感写真')]
+            
 
             # for kitem in kind_items[:2]:  # 这行用于测试使用，仅获取两组图片内容，正常爬取时可用下面的代码
             for kitem in kind_items: 
