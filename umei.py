@@ -119,7 +119,7 @@ if __name__ == "__main__":
     pattern = '<span><b>&nbsp;</b><h2><a href="/meinvtupian/(.*?)">(.*?)</a></h2></span>'
     type_items = spider.parserHtml(pattern, html1) # 获得对应的9个类型
     all_starttime = time.time()
-    for item in type_items[-2:]: # 根据获取到的每个类型url，分别请求网页，
+    for item in type_items: # 根据获取到的每个类型url，分别请求网页，
         each_type_starttime = time.time()
         each_type_url = url+item[0]
         print("each_type_url:",each_type_url) # each_type_url: https://www.umei.cc/meinvtupian/xingganmeinv/
